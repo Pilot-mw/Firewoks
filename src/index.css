@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes glow {
+  0% { opacity: 0.4; box-shadow: 0 0 40px 10px rgba(250,204,21,0.4); }
+  100% { opacity: 0.8; box-shadow: 0 0 80px 30px rgba(250,204,21,0.7); }
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .gold-gradient-text {
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
+  }
+
+  .glow-gold-text {
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+  }
+}
+
+@layer utilities {
+  .text-shadow-gold {
+    text-shadow: 0 0 30px rgba(250, 204, 21, 0.4);
+  }
+
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+  }
+}
